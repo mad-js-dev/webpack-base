@@ -1,0 +1,65 @@
+$profile-size: 26.4rem;
+$badge-padding: 2.5rem;
+
+.c-profile-picture {
+	padding: 2em 0 0 0;
+	height: auto;
+	display: block;
+	text-align: center;
+	position: relative;
+
+	& img {
+		width: $profile-size;
+		height: $profile-size;
+		background-color: $grey;
+		display: block;
+		border-radius: 50%;
+		margin: auto;
+	}
+
+	&__online-badge {
+		min-width: $profile-size / 4;
+		min-height: $profile-size / 4 -$badge-padding;
+		background-color: $green;
+		color: $white;
+		display: block;
+		border-radius: 50%;
+		position: absolute;
+		top: 7%;
+		right: 10vw;
+		padding-top: $badge-padding;
+		font-weight: 500;
+	    box-sizing: initial;
+	    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+
+	    &::before {
+	    	content: 'ONLINE';
+	    }
+	}
+}
+
+.c-profile-picture--small {
+	@extend .c-profile-picture;
+	padding: 0;
+
+	& img {
+		width: 4rem;
+		height: 4rem;
+	}
+	
+	.c-profile-picture__online-badge {
+	    min-width: 1.4rem;
+	    min-height: 1.4rem;
+	    right: 0.5rem;
+	    content: '';
+	    padding: 0;
+	    bottom: 0.3rem;
+	    top: initial;
+	    background-color: $dark-green;
+
+	    &::before {
+	    	content: '';
+	    }
+	}
+
+}

@@ -1,0 +1,39 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "Webpack project starter.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel dev prod",
+    "lint": "eslint src/**/*.js webpack.config.js",
+    "dev": "npm run clean && webpack-dev-server",
+    "prod": "npm run clean && webpack  --define process.env.NODE_ENV=\"production\"",
+    "clean": "rimraf ./dist/*"
+  },
+  "author": "Brais Vázquez",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^7.1.3",
+    "babel-preset-es2015": "^6.22.0",
+    "copy-webpack-plugin": "^4.3.0",
+    "css-loader": "^0.26.1",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.4",
+    "lodash": "^4.17.5",
+    "node-sass": "^4.4.0",
+    "npm-run-all": "^4.1.2",
+    "parallel-webpack": "^2.3.0",
+    "resolve-url-loader": "*",
+    "rimraf": "^2.6.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.13.1",
+    "uglify-es": "github:mishoo/UglifyJS2#harmony",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "url-loader": "*",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}

@@ -1,0 +1,88 @@
+$separator: '-';
+
+@each $value, $name in $font-family-sans-variants {
+	$name: unquote($static-font-path)+$font-family-sans+unquote($separator)+unquote(#{$name});
+	@font-face {
+		font-family: $font-family-sans;
+		src: unquote('url("../')+unquote($name)+unquote(nth($font-formats, 1))+unquote('")') format(str-slice(nth($font-formats, 1),2));
+		src: unquote('url("../')+unquote($name)+unquote(nth($font-formats, 2))+unquote('")') format(str-slice(nth($font-formats, 2),2)),
+			 unquote('url("../')+unquote($name)+unquote(nth($font-formats, 3))+unquote('")') format(str-slice(nth($font-formats, 3),2)),
+			 unquote('url("../')+unquote($name)+unquote(nth($font-formats, 4))+unquote('")') format('truetype'),
+			 unquote('url("../')+unquote($name)+unquote(nth($font-formats, 5))+unquote('#'+$font-family-sans+$separator+$name+'")') format(str-slice(nth($font-formats, 5),2)),
+			 unquote('url("../')+unquote($name)+unquote(nth($font-formats, 1))+unquote('#iefix")') format('embedded-opentype');
+		font-weight: $value;
+		font-style: normal;
+	}
+}
+
+
+
+$icons-name: unquote($static-font-path)+$font-family-icons;
+@font-face {
+	font-family: $font-family-icons;
+	src: unquote('url("../')+unquote($icons-name)+unquote(nth($font-formats, 1))+unquote('")') format(str-slice(nth($font-formats, 1),2));
+	src: unquote('url("../')+unquote($icons-name)+unquote(nth($font-formats, 2))+unquote('")') format(str-slice(nth($font-formats, 2),2)),
+		 unquote('url("../')+unquote($icons-name)+unquote(nth($font-formats, 3))+unquote('")') format(str-slice(nth($font-formats, 3),2)),
+		 unquote('url("../')+unquote($icons-name)+unquote(nth($font-formats, 4))+unquote('")') format('truetype'),
+		 unquote('url("../')+unquote($icons-name)+unquote(nth($font-formats, 5))+unquote('#'+$font-family-icons+$separator+$icons-name+'")') format(str-slice(nth($font-formats, 5),2)),
+		 unquote('url("../')+unquote($icons-name)+unquote(nth($font-formats, 1))+unquote('#iefix")') format('embedded-opentype');
+}
+
+@each $icon-name, $content-value in $icons-font {
+  .icon-font-#{$icon-name}:before {
+    content: $content-value;
+  }
+}
+
+[class^="icon-font"]:before, [class*=" icon-font"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+h1 {
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+}
+
+.back-btn {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-top:1rem;
+  padding-left:1rem;
+  box-sizing: border-box;
+}

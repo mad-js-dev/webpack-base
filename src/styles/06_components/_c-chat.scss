@@ -1,0 +1,99 @@
+$side-padding: 1rem;
+
+.c-chat {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	&__message {
+		display: flex;
+		margin: 0 $side-padding;
+	}
+
+	&__message-content {
+		@extend [class$="-center-column"];
+		background-color: $blue;
+		color: $white;
+		padding: 1.5rem 2rem;
+		border-radius: .5rem;
+		display:inline-block;
+		position: relative;
+		order: 2;
+		margin: 0 0 2.5rem 0;
+		font-weight: 500;
+
+		&::before {
+			width: 0; 
+			height: 0; 
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 30px solid $blue;
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -1rem;
+		}
+	}
+
+	&__input {
+		display: flex;
+		position: relative;
+
+		input {
+			display: block;
+			max-width: 100%;
+			margin: 0 $side-padding;
+			height: 5rem;
+			border: 0;
+			margin-bottom: 1rem;
+			padding-left: 2rem;
+			margin-left: 3rem;
+			width: 100%;
+			box-sizing: border-box; 
+			color: $grey;
+		}
+
+		&::before {
+			width: 0; 
+			height: 0; 
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 30px solid $white;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 2rem;
+		}
+	}
+}
+
+.c-chat__message--me {
+	@extend .c-chat__message;
+
+	& .c-chat-left-column {
+		order: 3;
+	}
+
+	& .c-chat-right-column {
+		order: 1;
+	}
+	.c-chat__message-content {
+		background-color: $white;
+		color: $black;
+
+		&::before {
+			left: initial;
+			right: -1rem;
+			border-top: 30px solid $white;
+			top: 0;
+			left: -1rem;
+		}
+	}
+
+	
+	.c-profile-picture__online-badge {
+		display: none;	
+	}
+}

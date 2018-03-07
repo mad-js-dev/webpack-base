@@ -1,0 +1,45 @@
+$header-height: 9vh;
+$header-side-columns-width: 16vw;
+
+.l-page {
+	height: 100vh;
+	background-color: $clear;
+
+	&__header {
+		display: flex;
+		height: $header-height;
+		min-height: 5rem;
+		background-color: $black;
+		color: $white;
+	}
+
+	&__title {
+		@extend [class$="-center-column"];
+		text-align: center;
+	}
+
+	&__content {
+		height: 100vh-$header-height;
+		position: relative;
+	}
+}
+
+//Generic columns for other components
+[class$="-left-column"], [class$="-right-column"] {
+	width: $header-side-columns-width;
+	display: inline-block;
+}
+
+[class$="-left-column"] {
+	order: 1;
+}
+
+[class$="-right-column"] {
+	order: 3;
+}
+
+[class$="-center-column"] {
+	display: inline-block;
+	width: 100vw-($header-side-columns-width*2);
+	order: 2;
+}
