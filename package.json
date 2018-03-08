@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel dev prod",
     "lint": "eslint src/**/*.js webpack.config.js",
     "dev": "npm run clean && webpack-dev-server",
-    "prod": "npm run clean && webpack  --define process.env.NODE_ENV=\"production\"",
+    "prod": "npm run clean && webpack",
     "clean": "rimraf ./dist/*"
   },
   "author": "Brais Vázquez",

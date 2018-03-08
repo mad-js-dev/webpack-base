@@ -15,8 +15,6 @@ $separator: '-';
 	}
 }
 
-
-
 $icons-name: unquote($static-font-path)+$font-family-icons;
 @font-face {
 	font-family: $font-family-icons;

@@ -12,7 +12,7 @@ npm start
 -Automatic resource output (statics are bundled only if requested)
 -Parallel compilation (Styles & DOM doesn't need to be compiled each time one of both has changes)
 
-#Remarks
+#Proyect structure
 -Dist: Build distribution folder, contains the whole process bundling result.
 (a stand alone website that can be droped in any kind of http server and work properly)
 
