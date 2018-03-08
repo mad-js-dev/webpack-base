@@ -1,9 +1,7 @@
 export default class App{
 
 	constructor(props) {
-		this.bindings = props;	
-		this.loadBindings(this.bindings);
-		this.setStates();
+		
 	}
 
 	addEvent(el, type, handler) {

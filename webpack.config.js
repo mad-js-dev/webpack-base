@@ -27,6 +27,20 @@ module.exports = [
             //Webpack loaders
             rules: [
                 {
+                    test: /\.hbs|handlebars$/,
+                    loader: "handlebars-loader",
+                    query: {
+                        partialDirs: [
+                            path.join(__dirname, 'src', 'views'),
+                            path.join(__dirname, 'src', 'components', '01_atoms'),
+                            path.join(__dirname, 'src', 'components', '02_molecules'),
+                            path.join(__dirname, 'src', 'components', '03_organisms'),
+                            path.join(__dirname, 'src', 'components', '04_templates'),
+                            path.join(__dirname, 'src', 'components', '05_pages')
+                        ]
+                    }
+                },
+                {
                     test: /\.js$/,
                     include: path.resolve(__dirname, 'scripts'),
                     use: [{
@@ -51,7 +65,7 @@ module.exports = [
                 title: 'Index',
                 filename: 'index.html',
                 partialDirs: './src/components/',
-                template: './src/views/index/index.html',
+                template: './src/views/index/index.hbs',
             })
         ]
     },
