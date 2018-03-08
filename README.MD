@@ -16,11 +16,13 @@ npm start
 -Dist: Build distribution folder, contains the whole process bundling result.
 (a stand alone website that can be droped in any kind of http server and work properly)
 
--Components: Handlebars components implementing Atomic design (http://bradfrost.com/blog/post/atomic-web-design/) design systems methodology.
+-Components: Handlebars components implementing Atomic design design systems methodology.
+(http://bradfrost.com/blog/post/atomic-web-design/) 
 
 -Statics: Contains anything that shouldnt be edited from an IDE.
 
 -Styles: Follows ITCss principles and its code follows BEM nomenclature.
+(https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 
 -Views: View for each page and files to be loaded specifically on certain pages.
 
